@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>E-commerce Simulato</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 mb-4 text-center">Negozio Online</h1>
+        <div id="product-list" class="row">
+            <!-- Qui verranno caricati dinamicamente i prodotti -->
+        </div>
+        <h2 class="mt-4 mb-2">Carrello</h2>
+        <ul id="cart" class="list-group mb-4">
+            <!-- Qui verranno visualizzati gli elementi nel carrello -->
+        </ul>
+        <h2 class="mt-4 mb-2">Dati di Pagamento</h2>
+        <form id="payment-form">
+            <div class="form-group">
+                <label for="cardholder-name">Intestatario della Carta:</label>
+                <input type="text" id="cardholder-name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="card-number">Numero della Carta:</label>
+                <input type="text" id="card-number" class="form-control" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="card-expiry">Scadenza:</label>
+                    <input type="text" id="card-expiry" class="form-control" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="card-cvc">CVC:</label>
+                    <input type="text" id="card-cvc" class="form-control" required>
+                </div>
+            </div>
+            <h2 class="mt-4 mb-2">Dati di Consegna</h2>
+            <div class="form-group">
+                <label for="delivery-name">Nome e Cognome:</label>
+                <input type="text" id="delivery-name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="delivery-country">Paese:</label>
+                <input type="text" id="delivery-country" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="delivery-city">Città:</label>
+                <input type="text" id="delivery-city" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="delivery-address">Indirizzo:</label>
+                <input type="text" id="delivery-address" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="delivery-phone">Numero di Cellulare:</label>
+                <input type="text" id="delivery-phone" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mt-4">Acquista</button>
+        </form>
+        <div id="purchase-message" class="text-center mt-4"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
