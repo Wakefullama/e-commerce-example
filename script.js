@@ -3,7 +3,8 @@ const products = [
     { id: 1, name: "Prodotto 1", price: 10.99 },
     { id: 2, name: "Prodotto 2", price: 19.99 },
     { id: 3, name: "Prodotto 3", price: 5.99 },
-    { id: 4, name: "Prodotto 4", price: 14.99 }
+    { id: 4, name: "Prodotto 4", price: 14.99 },
+    { id: 5, name: "Prodotto 5", price: 10.99 }
 ];
 
 $(document).ready(function() {
