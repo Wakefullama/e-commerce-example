@@ -185,7 +185,14 @@ function minimax(board, depth, alpha, beta, maximizingPlayer, parentNode) {
         currentPlayer = 'X';
         gameActive = true;
     });
+// Funzione per visualizzare l'albero decisionale nell'elemento con ID "treeView"
+    function visualizeTree(treeData) {
+    const treeView = document.getElementById('treeView');
+    treeView.innerHTML = JSON.stringify(treeData, null, 2);
+    }
 
+
+    visualizeTree(treeData);
     
     });
 

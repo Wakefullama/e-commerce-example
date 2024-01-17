@@ -119,3 +119,28 @@ h1 {
     }
 }
 
+.tree-view {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+.tree-node {
+    margin-left: 20px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.tree-node-value {
+    font-weight: bold;
+}
+
+.tree-node-children {
+    margin-left: 20px;
+}
