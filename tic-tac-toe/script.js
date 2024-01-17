@@ -96,6 +96,78 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+// Aggiungi una struttura per tracciare l'albero decisionale
+const treeData = {
+    node: 'root',
+    children: []
+};
+
+function minimax(board, depth, alpha, beta, maximizingPlayer, parentNode) {
+    const result = checkWinner(board);
+    const currentNode = {
+        node: `Depth ${depth}`,
+        value: null,
+        children: []
+    };
+
+    // Aggiungi il nodo corrente al parent node (se fornito)
+    if (parentNode) {
+        parentNode.children.push(currentNode);
+    } else {
+        // Se non c'è un parent node, siamo al nodo radice
+        treeData.children.push(currentNode);
+    }
+
+    if (result !== null) {
+        if (result === 'X') {
+            currentNode.value = -1;
+            return -1;
+        } else if (result === 'O') {
+            currentNode.value = 1;
+            return 1;
+        } else {
+            currentNode.value = 0;
+            return 0;
+        }
+    }
+
+    if (maximizingPlayer) {
+        let bestScore = -Infinity;
+        for (let i = 0; i < board.length; i++) {
+            if (board[i] === '') {
+                board[i] = 'O';
+                let score = minimax(board, depth + 1, alpha, beta, false, currentNode);
+                board[i] = '';
+                bestScore = Math.max(score, bestScore);
+                alpha = Math.max(alpha, score);
+                if (beta <= alpha) {
+                    break;
+                }
+            }
+        }
+        currentNode.value = bestScore;
+        return bestScore;
+    } else {
+        let bestScore = Infinity;
+        for (let i = 0; i < board.length; i++) {
+            if (board[i] === '') {
+                board[i] = 'X';
+                let score = minimax(board, depth + 1, alpha, beta, true, currentNode);
+                board[i] = '';
+                bestScore = Math.min(score, bestScore);
+                beta = Math.min(beta, score);
+                if (beta <= alpha) {
+                    break;
+                }
+            }
+        }
+        currentNode.value = bestScore;
+        return bestScore;
+    }
+}
+
+    
+
     // Inizializza la griglia di gioco e gli event listener
     const board = Array(9).fill('');
     cells.forEach(cell => {
