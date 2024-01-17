@@ -1,0 +1,121 @@
+/* Reset dei margini e dei padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stile di base per il corpo della pagina */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    color: #333; /* Colore del testo principale */
+}
+
+/* Stile per l'intestazione */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #007bff; /* Colore dell'intestazione */
+}
+
+/* Contenitore principale del gioco */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff; /* Colore dello sfondo del contenitore */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Griglia del gioco */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin: 0 auto;
+    background-color: #eee; /* Colore dello sfondo della griglia */
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Singola cella del gioco */
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 5px;
+    background-color: #fff; /* Colore dello sfondo della cella */
+}
+
+/* Stile quando si passa il mouse sopra una cella */
+.cell:hover {
+    background-color: #e9e9e9;
+}
+
+/* Stile per una cella occupata */
+.cell.taken {
+    pointer-events: none;
+    color: #666;
+}
+
+/* Stile per il messaggio di vincitore */
+.winner-message {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    display: none;
+    color: #28a745; /* Colore del messaggio di vincitore */
+}
+
+/* Stile per il pulsante di ricomincio gioco */
+.restart-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Stile per il pulsante di ricomincio gioco quando si passa il mouse sopra */
+.restart-button:hover {
+    background-color: #0056b3;
+}
+
+/* Stile per il giocatore che ha vinto */
+#winnerPlayer {
+    color: #dc3545; /* Colore del giocatore che ha vinto */
+}
+
+/* Adattamento per schermi più piccoli */
+@media (max-width: 600px) {
+    .game-board {
+        grid-template-columns: repeat(3, 60px);
+        grid-template-rows: repeat(3, 60px);
+    }
+
+    .cell {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+    }
+}
+
