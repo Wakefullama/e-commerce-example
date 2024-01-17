@@ -166,9 +166,7 @@ function minimax(board, depth, alpha, beta, maximizingPlayer, parentNode) {
     }
 }
 
-    
-
-    // Inizializza la griglia di gioco e gli event listener
+// Inizializza la griglia di gioco e gli event listener
     const board = Array(9).fill('');
     cells.forEach(cell => {
         cell.addEventListener('click', handleCellClick);
@@ -190,8 +188,6 @@ function minimax(board, depth, alpha, beta, maximizingPlayer, parentNode) {
     const treeView = document.getElementById('treeView');
     treeView.innerHTML = JSON.stringify(treeData, null, 2);
     }
-
-
     visualizeTree(treeData);
     
     });
